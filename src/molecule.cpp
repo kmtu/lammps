@@ -1111,7 +1111,7 @@ void Molecule::special_generate()
 {
   int newton_bond = force->newton_bond;
   tagint atom1,atom2;
-  int count[natoms];
+  int *count = static_cast<int *>(alloca(natoms * sizeof(int)));
 
   // temporary array for special atoms
 
